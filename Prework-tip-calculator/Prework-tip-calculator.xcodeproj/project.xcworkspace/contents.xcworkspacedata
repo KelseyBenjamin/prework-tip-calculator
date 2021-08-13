@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/queenk/ios class/prework-tip-calculator/Prework-tip-calculator/Prework-tip-calculator/SettingsViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/queenk/ios class/prework-tip-calculator/Prework-tip-calculator/Prework-tip-calculator/ViewController.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
