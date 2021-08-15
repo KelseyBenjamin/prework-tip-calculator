@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var splitBillDecision: UISwitch!
+    @IBOutlet weak var partySize: UILabel!
+    @IBOutlet weak var splitTotal: UILabel!
+    @IBOutlet weak var partySizeTextBox: UITextField!
+    @IBOutlet weak var splitTotalAmount: UILabel!
+    @IBOutlet weak var calculate: UIButton!
     
     
     
@@ -35,25 +41,21 @@ class ViewController: UIViewController {
             let tip_1 = defaults.integer(forKey: "tip_1")
             tipControl.setTitle(String(tip_1), forSegmentAt: 0)
         }
-        else{
-            tipControl.setTitle(String(5), forSegmentAt: 0)
-        }
+       
         
         if defaults.integer(forKey: "tip_2") != 0 {
             let tip_2 = defaults.integer(forKey: "tip_2")
             tipControl.setTitle(String(tip_2), forSegmentAt: 1)
         }
-        else{
-            tipControl.setTitle(String(10), forSegmentAt: 1)
-        }
+    
         
         if defaults.integer(forKey: "tip_3") != 0 {
             let tip_3 = defaults.integer(forKey: "tip_3")
             tipControl.setTitle(String(tip_3), forSegmentAt: 2)
         }
-        else{
+        /*else{
             tipControl.setTitle(String(15), forSegmentAt: 2)
-        }
+        }*/
         
 
         if defaults.bool(forKey: "darkmode") == true {
@@ -80,6 +82,8 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    var total = 0.00
+    
     @IBAction func calculateTip(_ sender: Any) {
         //Get bill amount from text input
         let bill = Double(billAmountTextField.text!) ?? 0
@@ -93,7 +97,7 @@ class ViewController: UIViewController {
         let tipPercentages = [first_tip/100, second_tip/100, third_tip/100]
         
         let tip = bill * Double(tipPercentages[tipControl.selectedSegmentIndex])
-        let total = bill + tip
+        total = bill + tip
         
         //Update Tip Amount Label
         tipAmountLabel.text = String(format: "$%.2f", tip)
@@ -101,7 +105,26 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
         
     }
-    
-
+    @IBAction func splitTheBill(_ sender: Any) {
+        if splitBillDecision.isOn == true {
+            partySize.isHidden = false
+            partySizeTextBox.isHidden = false
+            splitTotal.isHidden = false
+            splitTotalAmount.isHidden = false
+            calculate.isHidden = false
+        }
+        else {
+            partySize.isHidden = true
+            partySizeTextBox.isHidden = true
+            splitTotal.isHidden = true
+            splitTotalAmount.isHidden = true
+            calculate.isHidden = true
+        }
+    }
+    @IBAction func calculatesplit(_ sender: Any) {
+        let partySize = Double(partySizeTextBox.text!)!
+        let splitAmount = total/partySize
+        splitTotalAmount.text = String(format: "$%.2f", splitAmount)
+    }
 }
 
