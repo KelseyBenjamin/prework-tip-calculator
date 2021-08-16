@@ -27,6 +27,7 @@ The following **additional** features are implemented:
 - [X] Allow user to split the bill by desired amount of people.
 ## Video Walkthrough
 
+<img src="https://i.imgur.com/D52ghuF.gif", width=250 />x
 ![](https://i.imgur.com/D52ghuF.gif)
 
 ## Notes
