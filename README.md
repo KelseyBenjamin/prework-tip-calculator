@@ -1,4 +1,4 @@
-# Pre-work - Tip Calculstor
+# Pre-work - Tip Calculator
 **Name of your app** is a tip calculator application for iOS.
 
 Submitted by: **Kelsey Benjamin**
@@ -21,16 +21,19 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
-- [ ] Allow user to select dark mode option for application and it remains until changed.
-- [ ] Allow user to select change the 3 choices for their tip defaults.
+- [X] List anything else that you can get done to improve the app functionality!
+- [X] Allow user to select dark mode option for application and it remains until changed.
+- [X] Allow user to select change the 3 choices for their tip defaults.
+- [X] Allow user to split the bill by desired amount of people.
 ## Video Walkthrough
+
+![](https://i.imgur.com/D52ghuF.gif)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 - The required stories werent bad, most research and learning was done when trying to implement additional functionality.
-- Also not reallyb sure about UI component and how it can be improved
+- Also not really sure about UI component and how to improve it
 
 
 ## License
@@ -48,3 +51,4 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
